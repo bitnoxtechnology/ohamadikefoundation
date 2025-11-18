@@ -1,0 +1,352 @@
+/* Program Page Specific Styles */
+
+.programs-page {
+  padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 4vw, 2rem);
+  min-height: calc(100vh - 5rem);
+  background: var(--white);
+}
+
+.programs-page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Programs Page Header */
+.programs-page-header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 10vw, 6rem);
+  margin-top: 4rem;
+}
+
+.programs-page-header h1 {
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.programs-page-header p {
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  color: var(--gray-600);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Programs Container */
+.programs-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 10vw, 6rem);
+}
+
+/* Individual Program Item */
+.program-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: center;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: visible;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.program-item:hover {
+  transform: translateY(-4px);
+}
+
+/* Reverse layout for alternating design */
+.program-item.reverse {
+  direction: rtl;
+}
+
+.program-item.reverse > * {
+  direction: ltr;
+}
+
+/* Program Image Container */
+.program-image {
+  width: 100%;
+  height: clamp(320px, 55vw, 450px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+}
+
+.program-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.program-item:hover .program-image::before {
+  opacity: 1;
+}
+
+.program-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.program-item:hover .program-image img {
+  transform: scale(1.05);
+}
+
+/* Program Content */
+.program-content {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+
+/* Program Icon */
+.program-icon {
+  width: clamp(3.5rem, 8vw, 4rem);
+  height: clamp(3.5rem, 8vw, 4rem);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.25);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.program-item:hover .program-icon {
+  transform: rotate(5deg) scale(1.1);
+  box-shadow: 0 6px 30px rgba(220, 38, 38, 0.35);
+}
+
+.program-icon svg {
+  width: clamp(1.25rem, 3vw, 1.5rem);
+  height: clamp(1.25rem, 3vw, 1.5rem);
+}
+
+/* Program Title */
+.program-content h3 {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--gray-900);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Program Description */
+.program-content p {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: var(--gray-600);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Program Highlight/Impact Section */
+.program-highlight {
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--primary) 4px,
+    var(--gray-50) 4px,
+    var(--gray-50) 100%
+  );
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border-radius: var(--radius-md);
+  margin-top: clamp(0.5rem, 1vw, 0.75rem);
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s ease;
+}
+
+.program-item:hover .program-highlight {
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--primary) 4px,
+    var(--primary-light) 4px,
+    var(--primary-light) 100%
+  );
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.program-highlight p {
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-size: clamp(0.95rem, 1.5vw, 1.0625rem);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Learn More Button */
+.program-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: clamp(0.95rem, 1.5vw, 1.0625rem);
+  padding: 0;
+  background: none;
+  margin-top: clamp(0.5rem, 1vw, 0.75rem);
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.program-learn-more:hover {
+  gap: 0.75rem;
+  color: var(--primary-dark);
+}
+
+.program-learn-more svg {
+  transition: transform 0.3s ease;
+}
+
+.program-learn-more:hover svg {
+  transform: translateX(4px);
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .programs-page {
+    padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .program-item {
+    gap: clamp(2rem, 5vw, 3rem);
+  }
+
+  .program-image {
+    height: clamp(280px, 50vw, 380px);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .programs-page {
+    padding: clamp(2rem, 5vw, 3rem) 1rem;
+  }
+
+  .programs-page-header {
+    margin-top: 2rem;
+    margin-bottom: clamp(2rem, 6vw, 3rem);
+  }
+
+  .programs-container {
+    gap: clamp(3rem, 8vw, 4rem);
+  }
+
+  .program-item {
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .program-item.reverse {
+    direction: ltr;
+  }
+
+  .program-image {
+    height: clamp(250px, 60vw, 320px);
+  }
+
+  .program-content {
+    padding: clamp(1rem, 3vw, 1.5rem) 0;
+  }
+
+  .program-highlight {
+    padding: clamp(1rem, 3vw, 1.25rem);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .programs-page-header h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .program-content h3 {
+    font-size: clamp(1.375rem, 5vw, 1.75rem);
+  }
+
+  .program-image {
+    height: clamp(220px, 55vw, 280px);
+  }
+}
+
+/* Landscape Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  .programs-page {
+    padding: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .program-image {
+    height: 280px;
+  }
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.program-item {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .program-item,
+  .program-image img,
+  .program-icon,
+  .program-highlight,
+  .program-learn-more {
+    transition: none;
+    animation: none;
+  }
+
+  .program-item:hover {
+    transform: none;
+  }
+
+  .program-item:hover .program-image img {
+    transform: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .programs-page {
+    padding: 1rem;
+  }
+
+  .program-item {
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .program-learn-more {
+    display: none;
+  }
+}

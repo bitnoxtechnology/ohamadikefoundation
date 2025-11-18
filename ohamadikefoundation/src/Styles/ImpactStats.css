@@ -1,0 +1,116 @@
+.impact-stats {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  background-color: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+}
+
+@media (max-width: 768px) {
+  .impact-stats {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-stats {
+    padding: var(--spacing-2xl) var(--spacing-sm);
+  }
+}
+
+.impact-stats-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.impact-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .impact-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+.impact-stat-card {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-100);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.impact-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gray-200);
+}
+
+.impact-stat-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #fecaca 0%, #fee2e2 100%);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin: 0 auto var(--spacing-md);
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.impact-stat-card:hover .impact-stat-icon {
+  transform: scale(1.1);
+}
+
+.icon-svg {
+  width: 1.75rem;
+    color: var(--primary);
+  height: 1.75rem;
+}
+
+.impact-stat-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .impact-stat-value {
+    font-size: 1.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+.impact-stat-label {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .impact-stat-label {
+    font-size: 0.8125rem;
+  }
+}

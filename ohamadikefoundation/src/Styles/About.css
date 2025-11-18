@@ -1,0 +1,308 @@
+
+.about-story .story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .about-story .story-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.story-content > div {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+/* Highlight box for key message */
+.story-highlight {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 12px;
+  border-left: 5px solid var(--accent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-text {
+  color: var(--accent-foreground);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.story-image-wrapper {
+  position: relative;
+}
+
+.image-overlay-accent {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--accent);
+  border-radius: 12px;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.image-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Stats Section */
+.stats-section {
+  margin: clamp(5rem, 12vw, 8rem) 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(2rem, 3vw, 2.5rem);
+  padding: clamp(2.5rem, 5vw, 4rem);
+  background: var(--muted);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+  }
+}
+
+.stat-card {
+  text-align: center;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+}
+
+.stat-icon {
+  width: clamp(3rem, 7vw, 3.5rem);
+  height: clamp(3rem, 7vw, 3.5rem);
+  background: linear-gradient(135deg, var(--accent), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-foreground);
+  margin: 0 auto clamp(0.75rem, 1.5vw, 1rem);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  color: var(--muted-foreground);
+  font-weight: 600;
+}
+
+/* Values Section */
+.values-section {
+  margin: clamp(5rem, 12vw, 8rem) 0;
+}
+
+.section-header-centered {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.section-header-centered .section-title {
+  margin: 0 auto clamp(1rem, 2vw, 1.5rem);
+}
+
+.section-header-centered .section-subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(2rem, 3vw, 2.5rem);
+}
+
+@media (max-width: 640px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.value-card {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: clamp(2rem, 4vw, 2.5rem);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover::before {
+  transform: scaleX(1);
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent);
+}
+
+.value-icon {
+  width: clamp(3.5rem, 8vw, 4.5rem);
+  height: clamp(3.5rem, 8vw, 4.5rem);
+  background: linear-gradient(135deg, var(--accent), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-foreground);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  color: var(--foreground);
+  margin: 0 0 clamp(0.75rem, 1.5vw, 1rem) 0;
+  font-weight: 700;
+}
+
+.value-card p {
+  color: var(--muted-foreground);
+  margin: 0;
+  font-size: clamp(0.95rem, 1.5vw, 1rem);
+  line-height: 1.6;
+}
+
+/* Mission Section */
+.mission-section {
+  margin: clamp(5rem, 12vw, 8rem) 0;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+.mission-image-wrapper {
+  position: relative;
+  order: -1;
+}
+
+@media (max-width: 768px) {
+  .mission-image-wrapper {
+    order: 0;
+  }
+}
+
+.mission-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* Mission points with icon and text layout */
+.mission-points {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 2vw, 2rem);
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+.mission-point {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1.25rem, 2vw, 1.75rem);
+  background: var(--muted);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.mission-point:hover {
+  background: linear-gradient(135deg, var(--muted) 0%, rgba(0, 0, 0, 0.02) 100%);
+  transform: translateX(8px);
+}
+
+.point-icon {
+  width: clamp(2.5rem, 5vw, 3rem);
+  height: clamp(2.5rem, 5vw, 3rem);
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-foreground);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.mission-point h4 {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: var(--foreground);
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.mission-point p {
+  color: var(--muted-foreground);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Utility Classes */
+.leading-relaxed {
+  line-height: 1.8;
+}
+
+.text-center {
+  text-align: center;
+}
