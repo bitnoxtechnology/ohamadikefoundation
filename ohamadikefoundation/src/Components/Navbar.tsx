@@ -61,10 +61,20 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        <button className="navbar-donate-btn">Donate Now</button>
+        <button type="button" className="navbar-donate-btn">
+          <Link
+            to={"https://paystack.shop/pay/ohamadike-foundation"}
+            target="_blank"
+            rel="noreferrer"
+            className=""
+          >
+            Donate Now
+          </Link>
+        </button>
 
         {/* Mobile Menu Button */}
         <button
+          type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="navbar-mobile-menu"
           aria-label="Toggle menu"
@@ -89,7 +99,15 @@ const Navbar: React.FC = () => {
                 {item.name}
               </Link>
             ))}
-            <button className="mobile-menu-donate">Donate Now</button>
+            <button type="button" className="mobile-menu-donate">
+              <Link
+                to={"https://paystack.shop/pay/ohamadike-foundation"}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Donate Now
+              </Link>
+            </button>
           </div>
         </div>
       )}
