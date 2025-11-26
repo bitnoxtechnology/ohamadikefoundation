@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import SiteLogo from "../assets/icon.jpg";
 import "../Styles/Navbar.css";
 
 const Navbar: React.FC = () => {
@@ -40,10 +41,7 @@ const Navbar: React.FC = () => {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <Heart
-            className="navbar-logo-icon"
-            style={{ width: "24px", height: "24px" }}
-          />
+          <img src={SiteLogo} alt="Site Logo" width={50} />
           <span>Ohamadike Int Foundation</span>
         </Link>
 

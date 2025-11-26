@@ -8,6 +8,7 @@ import { impactStats } from "../Data/Impact";
 import { testimonials } from "../Data/Testimonial";
 import "../Styles/Pages.css";
 import Meta from "../Components/Meta";
+import OurWork from "../Components/OurWork";
 
 const ImpactPage: React.FC = () => {
   const containerVariants = {
@@ -72,6 +73,8 @@ const ImpactPage: React.FC = () => {
               );
             })}
           </motion.div>
+
+          <OurWork />
 
           {/* Testimonials Section */}
           <TestimonialCard testimonials={testimonials} />

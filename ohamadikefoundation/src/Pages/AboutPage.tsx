@@ -108,6 +108,37 @@ const AboutPage: React.FC = () => {
             </div>
           </motion.section>
 
+          <div className="about-info">
+            <p>
+              Ohamadike International Foundation is a non-governmental
+              organization dedicated to providing shelter for homeless widows
+              and orphans in Nigeria. We promote inclusion, equality, and the
+              protection of rights and responsibilities for all
+              individuals—regardless of their origin, gender, race, religion, or
+              social background. Our work is driven by programmes and projects
+              that address the need for care, accommodation, training, and
+              social inclusion for the less privileged and physically
+              challenged. We pay special attention to vulnerable groups such as
+              abandoned widows, orphans, motherless children, women, and ethnic
+              minorities. In addition, we implement initiatives that create
+              wider societal impact. These include training professionals and
+              volunteers, conducting social awareness campaigns, and promoting
+              community development. We also coordinate the Nigerian Network
+              Against Trafficking in Persons to Europe, targeting child labour,
+              prostitution, and other forms of exploitation. Through
+              collaboration with numerous organizations, we are committed to
+              confronting and eradicating human trafficking. At Ohamadike
+              International Foundation, we believe education is a powerful tool
+              for reducing crime in our society. Educated and gainfully employed
+              children are less likely to engage in crime or violence. For this
+              reason, we offer scholarships to indigent students, helping them
+              pursue and complete their education. We also run a special school
+              for the physically challenged, with a focus on children who are
+              deaf or mute. Our dedicated teachers have consistently
+              demonstrated exceptional commitment and performance.
+            </p>
+          </div>
+
           {/* Quick Stats Section */}
           <motion.section
             className="content-section stats-section"
@@ -196,17 +227,21 @@ const AboutPage: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <div className="mission-grid">
-              <motion.div
-                className="mission-image-wrapper"
-                variants={itemVariants}
-              >
-                <div className="image-container">
-                  <img
-                    src={AboutImage2}
-                    alt="Foundation mission and community programs"
-                  />
+              <motion.div variants={itemVariants}>
+                <div className="mission-image-wrapper">
+                  <div className="image-container">
+                    <img
+                      src={AboutImage2}
+                      alt="Foundation mission and community programs"
+                    />
+                  </div>
+                  <div className="image-overlay-accent"></div>
                 </div>
-                <div className="image-overlay-accent"></div>
+
+                <div className="mission-image-description">
+                  <h4>Dr. Remigius I.C Igbonaju</h4>
+                  <p className="founder-title">Chairman & Founder</p>
+                </div>
               </motion.div>
 
               <motion.div className="mission-content" variants={itemVariants}>

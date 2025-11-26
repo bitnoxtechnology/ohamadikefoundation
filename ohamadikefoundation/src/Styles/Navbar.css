@@ -253,6 +253,10 @@
   transform: scale(0.98);
 }
 
+.mobile-menu-donate a {
+  color: white;
+}
+
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .navbar-container {
